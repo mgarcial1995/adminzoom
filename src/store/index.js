@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 Vue.use(Vuex);
 
-axios.defaults.baseURL = "http://190.116.49.73:8001";
+axios.defaults.baseURL = "http://127.0.0.1:8000";
 // const token = "Bearer " + localStorage.getItem("token");
 
 // poner cada vez que se instancie
@@ -57,18 +57,6 @@ const store = new Vuex.Store({
           console.log(error);
         });
     },
-    // getCourses({ commit }) {
-    //   axios
-    //     .get("/api/classroom/courses")
-    //     .then(response => {
-    //       this.courses = response.data.data;
-    //       commit("getCourses", this.courses);
-    //       console.log(this.courses);
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
-    // },
     getCompanies({ commit }) {
       axios
         .get("/api/companies")
@@ -80,7 +68,6 @@ const store = new Vuex.Store({
           console.log(error);
         });
     },
-    // TRAER FORMALITIES
     getFormalities({ commit }) {
       axios
         .get("/api/formalities")
@@ -92,7 +79,6 @@ const store = new Vuex.Store({
           console.log(error);
         });
     },
-    // TRAER PUBLICACIONES
     getPublications({ commit }) {
       axios
         .get("/api/posts", {
