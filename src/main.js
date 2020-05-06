@@ -6,7 +6,7 @@ import vuetify from "./plugins/vuetify";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-axios.defaults.baseURL = "http://190.116.49.73:8001";
+axios.defaults.baseURL = "http://127.0.0.1:8000";
 const AUTH_TOKEN = "Bearer " + localStorage.getItem("token");
 axios.defaults.headers.common["Authorization"] = AUTH_TOKEN;
 
@@ -19,16 +19,5 @@ new Vue({
   axios,
   vuetify,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
-
-/*
-const API_URL = process.env.API_URL || 'http://localhost:3000/api/v1'
-export default axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer' + localStorage.token
-  }
-})
-*/
